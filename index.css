@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background: #222;
+    overflow: hidden;
+}
+
+i{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #40ffcf;
+    border-radius: 100%;
+    animation: animate 2s linear forwards;
+
+    /* افکت نئون */
+    box-shadow: 0 0 10px #40ffcf,
+              0 0 20px #40ffcf,
+              0 0 40px #00ffaa,
+              0 0 60px #00ffaa;
+  filter: blur(0.5px);
+}
+
+@keyframes animate {
+    0%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(var(--x), var(--y));
+    }
+}
