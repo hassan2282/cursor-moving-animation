@@ -45,11 +45,25 @@ i{
 .title{
     color: #00ffaa;
     width:100%;
-    height: 960px;
+    height: 560px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    overflow: clip;
+    animation: titleAnimate both;
+    animation-timeline: view();
+}
+
+@keyframes titleAnimate {
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 100%;
+        transform: translate(0);
+    }
 }
 
 .cards{
@@ -62,6 +76,7 @@ i{
     align-items: center;
     font-size: 30px;
     gap: 80px;
+    overflow:clip;
 }
 
 .card{
@@ -78,7 +93,25 @@ i{
                 0 0 40px #7dff03,
                 0 0 60px #7dff03;
     filter: blur(0.5px);
+    animation: eatchCardAnimation both;
+    animation-timeline: view(60% 30%);
 
+}
+
+@keyframes eatchCardAnimation {
+     0%{
+        opacity: 0;
+        transform: translateX(300px);
+    }
+    80%{
+        opacity: 1;
+        transform: translateX(0);
+        scale: 1;
+    }
+    100%{
+        opacity: 0;
+        scale: 2;
+    }
 }
 
 h1{
@@ -93,10 +126,13 @@ h1{
 .text{
     color: #fff;
     width: 80%;
-    font-size: 60px;
+    height: 800px;
+    font-size: 100px;
     margin-top: 300px;
     height: 560px;
     display: flex;
+    flex-direction: column;
+    gap: 100px;
     justify-content: center;
     align-items: center;
     text-shadow: 0 0 10px #7dff03,
@@ -104,4 +140,22 @@ h1{
                 0 0 40px #7dff03,
                 0 0 60px #7dff03;
     filter: blur(0.5px);
+    overflow: clip;
+}
+
+.lorem{
+    animation: textAnimate;
+    animation-timeline: view(70% 5%);
+}
+
+@keyframes textAnimate{
+    0%{
+        filter: none;
+    }
+    40%, 60%{
+        filter: blur(20px);
+    }
+    100%{
+        filter: none;
+    }
 }
